@@ -56,6 +56,11 @@ Implementation of a PagingAndSortingRepository
 * Version 1 and Version 2 should be in different branches. One artifact per version
 
 ## Custom Header Versioning
-
+* add value for headers in @RequestMapping
+```
+@RequestMapping(value="/schedule", method= RequestMethod.GET, headers="Accept-version=v2")
+```
+* Not for spring-data-rest managed entity
+* Better to have a load balancer to check the header and redirect to the correpsonding instance
 
 
