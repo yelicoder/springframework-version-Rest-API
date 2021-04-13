@@ -1,10 +1,10 @@
 # springframework-version-Rest-API
 Code and Notes from studying Pluralsight course: Spring Framework: Versioning Spring Data REST APIs by Craig Golightly
 
-## Module 1
+### Module 1
 Implementation of a PagingAndSortingRepository
 
-## API versioning Strategies
+### API versioning Strategies
 * URI
   - version is embedded in URI, usually near root.
   - Works with caching where URI is key
@@ -28,7 +28,7 @@ Implementation of a PagingAndSortingRepository
   - Simplifies server-side logic
   - Clients doon't need to know any special header ibnformation
   - If need a version inthe future, jsut add one - exising becomes "old" default
-## URI Versioning
+### URI Versioning
 * spring.data.rest.basePath=/v2 in applicaiton.properties automatically adds the version number managed by Spring Data
   - Need add the spring-data-rest dependency
 * @BasePathAwareController add to include basePath in any @RequestMapping that are not managed by Spring Data
@@ -40,9 +40,21 @@ Implementation of a PagingAndSortingRepository
     <artifactId>spring-boot-starter-data-rest</artifactId>
   </dependency>
   ```
-## Module 2
+### Module 2
 * No controllers
 * Only an Employee model and an EmployeeRepository extends JpaRepository or PagingAndSortingRepository, Spring boot automatically generated the REST APIs to the Employee entity as long as data-rest starter dependency is in pom.xml
+### Managing API versions
+* group breaking changes into a single release
+* Major version - breaking changes. minor version - non-breaking changes
+* Set end-of-life date for previous version
+* Consider if back end data store changes
+* Consider how the client switch
+* Anti-patterns
+  - versions in class name
+  - mapping out all CRUD methods
+* maximize what the framework can do for you
+* Version 1 and Version 2 should be in different branches. One artifact per version
+
 ## Custom Header Versioning
 
 
