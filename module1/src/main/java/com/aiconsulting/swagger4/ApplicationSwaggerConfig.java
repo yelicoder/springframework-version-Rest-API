@@ -24,7 +24,7 @@ public class ApplicationSwaggerConfig {
                         .groupName("employee-api-v1")
                 .select()
                 .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.ant("/v1/**"))
+                .paths(PathSelectors.any())
                 .build()
                 .apiInfo(getApiInfo("v1"));
     }

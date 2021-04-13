@@ -11,7 +11,7 @@ public class scheduleServiceImpl implements scheduleService {
     @Override
     @ApiOperation(value="Get the default schedule for employee",
             notes="All employees share the same schedule")
-    @RequestMapping(value="/v1/schedule", method= RequestMethod.GET)
+    @RequestMapping(value="/schedule", method= RequestMethod.GET)
     public String getSchedule1() {
         return "You v1 schedule is M-F 9-5";
     }
