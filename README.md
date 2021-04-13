@@ -16,23 +16,23 @@ Implementation of a PagingAndSortingRepository
   - Non-standard media types can be confusing
 * Custom header
   - Define a custom header for version information: ```Accept-version: v1```
-  - Userd server side to determine what version to use for call
+  - Used server side to determine what version to use for call
   - URI does not change
   - More clear than media type
 * Request parameter
   - Define a version parameter
   - Parsed out with other parameters to determine what version to use for call
   - URI does not change
-  - Routing can be mofe difficult than other versioning strategies
+  - Routing can be more difficult than other versioning strategies
 * No strategy
   - Simplifies server-side logic
-  - Clients doon't need to know any special header ibnformation
-  - If need a version inthe future, jsut add one - exising becomes "old" default
+  - Clients don't need to know any special header information
+  - If need a version in the future, just add one - exising becomes "old" default
 ### URI Versioning
-* spring.data.rest.basePath=/v2 in applicaiton.properties automatically adds the version number managed by Spring Data
+* spring.data.rest.basePath=/v2 in applicaiton.properties automatically adds the version number to entities managed by Spring Data
   - Need add the spring-data-rest dependency
 * @BasePathAwareController add to include basePath in any @RequestMapping that are not managed by Spring Data
-  - Need add the spring-date-rest dependency to have this annotation working
+  - Need add the spring-data-rest dependency to have this annotation working
   - both the /v2 version and the version without version number work
   ```
   <dependency>
