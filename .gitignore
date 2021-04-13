@@ -21,3 +21,12 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+#specific to Intellij SpringBoot project
+.DS_Store
+.idea/
+*.iml
+*mvnw.*
+*mvnw
+*/target
+HELP.md
